@@ -18,7 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
+//middleware auth di autenticazione con gruppo di rotte
 Route::middleware(["auth", "verified"])
     ->name("admin.")
     ->prefix("admin")

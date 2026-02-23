@@ -9,6 +9,6 @@ class Dashboard extends Controller
 {
     public function index()
     {
-        return "Complimenti! Sei nella home del backoffice.";
+        return view("admin.home");
     }
 }
