@@ -14,12 +14,12 @@
                     <h5 class="card-title text-dark"> {{$project->project_name}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Cliente: {{ $project->client }}</h6>
                     <p class="card-text text-secondary small">Data: {{ $project->date }}</p>
-                    <p class="card-text">{{ $project->overview }}</p>
+                    
 
                 </div>
 
                 <div class="card-footer bg-transparent border-top-0">
-                    <a href="#" class="btn btn-outline-primary btn-sm">Dettagli</a>
+                    <a href={{route("projects.show", $project->id)}} class="btn btn-outline-primary btn-sm">Dettagli</a>
                 </div>
 
             </div>
