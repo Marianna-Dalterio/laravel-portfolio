@@ -2,6 +2,10 @@
 @section("content")
 <div class="container mt-4">
     <h1>Tutti i tuoi progetti</h1>
+    <div class="d-flex">
+        <a class="btn btn-outline-primary" href="{{route("projects.create")}}">Aggiungi un progetto</a>
+
+    </div>
 
     <!--iterazione x card!-->
     <div class="row mt-4">
