@@ -37,15 +37,18 @@ class ProjectController extends Controller
         //creo nuova istanza del model Project
         $newProject = new Project();
 
+        //inserisco gli attributi 
         $newProject->project_name = $data["project_name"];
         $newProject->client = $data["client"];
         $newProject->date = $data["date"];
         $newProject->overview = $data["overview"];
 
+        //salvo il nuovo dato nel db
         $newProject->save();
 
 
 
+        //faccio un redirect alla rotta show per vedere il nuovo progetto salvato
         return redirect()->route("projects.show", $newProject);
     }
 
@@ -60,9 +63,9 @@ class ProjectController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Project $project)
     {
-        //
+        return view("admin.Projects.edit", compact("project"));
     }
 
     /**
@@ -70,7 +73,7 @@ class ProjectController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        return "sei nella update";
     }
 
     /**
