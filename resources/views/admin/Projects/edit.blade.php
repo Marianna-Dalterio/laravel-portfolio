@@ -31,7 +31,7 @@
 
                     <div class="mb-3">
                         <label for="date" class="form-label fw-bold">Periodo</label>
-                        <input type="text" class="form-control" id="date" name="date"
+                        <input type="date" class="form-control" id="date" name="date"
                             value="{{ $project->date }}">
                     </div>
 
