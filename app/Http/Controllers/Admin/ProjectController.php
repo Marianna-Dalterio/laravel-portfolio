@@ -31,7 +31,22 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        return "Sei nello store";
+        //recupero i dati inviati alla store con il metodo all() per ottenere tutte le coppie name-value
+        $data = $request->all();
+
+        //creo nuova istanza del model Project
+        $newProject = new Project();
+
+        $newProject->project_name = $data["project_name"];
+        $newProject->client = $data["client"];
+        $newProject->date = $data["date"];
+        $newProject->overview = $data["overview"];
+
+        $newProject->save();
+
+
+
+        return redirect()->route("projects.show", $newProject);
     }
 
     /**
