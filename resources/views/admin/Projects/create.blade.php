@@ -14,13 +14,15 @@
                     @csrf
 
                     <div class="mb-3">
-                        <label for="project_name" class="form-label fw-bold">Nome Progetto</label>
+                        <label for="project_name" class="form-label fw-bold">Nome Progetto
+                            <span class="text-danger">*</span> </label>
                         <input type="text" class="form-control" id="project_name" name="project_name">
                     </div>
 
 
                     <div class="mb-3">
-                        <label for="client" class="form-label fw-bold">Cliente</label>
+                        <label for="client" class="form-label fw-bold">Cliente
+                            <span class="text-danger">*</span> </label>
                         <input type="text" class="form-control" id="client" name="client">
                     </div>
 
