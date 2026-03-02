@@ -30,6 +30,20 @@
                     </div>
 
                     <div class="mb-3">
+                        <label for="type" class="form-label fw-bold">Tipologia Progetto</label>
+                        <select class="form-select" id="type" name="type">
+                            <option value="">Seleziona una tipologia</option>
+                            <option value="Front-end" {{ $project->type == 'Front-end' ? 'selected' : '' }}>Front-end
+                            </option>
+                            <option value="Back-end" {{ $project->type == 'Back-end' ? 'selected' : '' }}>Back-end</option>
+                            <option value="Fullstack" {{ $project->type == 'Fullstack' ? 'selected' : '' }}>Fullstack
+                            </option>
+                            <option value="Design" {{ $project->type == 'Design' ? 'selected' : '' }}>Design</option>
+                            <option value="Mobile" {{ $project->type == 'Mobile' ? 'selected' : '' }}>Mobile</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
                         <label for="date" class="form-label fw-bold">Periodo</label>
                         <input type="date" class="form-control" id="date" name="date"
                             value="{{ $project->date }}">
