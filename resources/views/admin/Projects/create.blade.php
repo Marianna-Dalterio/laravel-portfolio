@@ -26,7 +26,7 @@
                         <input type="text" class="form-control" id="client" name="client">
                     </div>
 
-                    <div class="mb-3">
+                    {{-- <div class="mb-3">
                         <label for="type" class="form-label fw-bold">Tipologia Progetto</label>
                         <select class="form-select" id="type" name="type">
                             <option value="" selected>Seleziona una tipologia</option>
@@ -36,7 +36,7 @@
                             <option value="Design">Design</option>
                             <option value="Mobile">Mobile</option>
                         </select>
-                    </div>
+                    </div> --}}
 
                     <div class="mb-3">
                         <label for="date" class="form-label fw-bold">Periodo</label>

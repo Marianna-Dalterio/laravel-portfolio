@@ -2,8 +2,9 @@
 @section('content')
     <div class="container mt-4">
         <h1 class="title text-dark">{{ $project->project_name }}</h1>
-        <p class="badge bg-info text-dark">{{ $project->type }}</p>
+        {{-- <p class="badge bg-info text-dark">{{ $project->type }}</p> --}}
         <p class="card-text">{{ $project->overview }}</p>
+
 
         <div class="d-flex justify-content-between py-4 ">
 
@@ -17,6 +18,8 @@
         </div>
 
     </div>
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
