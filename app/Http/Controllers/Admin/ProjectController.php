@@ -40,7 +40,7 @@ class ProjectController extends Controller
         //inserisco gli attributi 
         $newProject->project_name = $data["project_name"];
         $newProject->client = $data["client"];
-        $newProject->type = $data["type"];
+        // $newProject->type = $data["type"];
         $newProject->date = $data["date"];
         $newProject->overview = $data["overview"];
 
@@ -80,7 +80,7 @@ class ProjectController extends Controller
         //modifico le informazioni contenute nel project
         $project->project_name = $data["project_name"];
         $project->client = $data["client"];
-        $project->type = $data["type"];
+        // $project->type = $data["type"];
         $project->date = $data["date"];
         $project->overview = $data["overview"];
 
