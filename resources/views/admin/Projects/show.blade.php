@@ -2,7 +2,7 @@
 @section('content')
     <div class="container mt-4">
         <h1 class="title text-dark">{{ $project->project_name }}</h1>
-        {{-- <p class="badge bg-info text-dark">{{ $project->type }}</p> --}}
+        <p class="badge bg-info text-dark">{{ $project->type?->name ?? 'Nessuno' }}</p>
         <p class="card-text">{{ $project->overview }}</p>
 
 

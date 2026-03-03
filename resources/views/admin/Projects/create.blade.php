@@ -26,17 +26,17 @@
                         <input type="text" class="form-control" id="client" name="client">
                     </div>
 
-                    {{-- <div class="mb-3">
-                        <label for="type" class="form-label fw-bold">Tipologia Progetto</label>
-                        <select class="form-select" id="type" name="type">
-                            <option value="" selected>Seleziona una tipologia</option>
-                            <option value="Front-end">Front-end</option>
-                            <option value="Back-end">Back-end</option>
-                            <option value="Fullstack">Fullstack</option>
-                            <option value="Design">Design</option>
-                            <option value="Mobile">Mobile</option>
+                    <div class="mb-3">
+                        <label for="type_id" class="form-label">Tipologia</label>
+                        <select class="form-select" name="type_id" id="type_id">
+                            <option value="">Seleziona una tipologia</option>
+                            @foreach ($types as $type)
+                                <option value="{{ $type->id }}">
+                                    {{ $type->name }}
+                                </option>
+                            @endforeach
                         </select>
-                    </div> --}}
+                    </div>
 
                     <div class="mb-3">
                         <label for="date" class="form-label fw-bold">Periodo</label>
