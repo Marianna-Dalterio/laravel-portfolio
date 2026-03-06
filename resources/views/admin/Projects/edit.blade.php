@@ -55,8 +55,9 @@
                     </div>
 
 
-                    <div class="d-flex justify-content-end">
+                    <div class="d-flex justify-content-between">
                         <button type="submit" class="btn btn-primary">Salva Modifiche</button>
+                        <a href="{{ route('projects.index') }}" class="btn btn-secondary">Annulla</a>
                     </div>
 
                 </form>

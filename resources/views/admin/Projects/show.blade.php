@@ -9,10 +9,10 @@
 
         <div class="d-flex justify-content-between py-4 ">
 
-            <a href="{{ route('projects.index') }}" class="btn btn-outline-primary">Torna a Progetti</a>
+            <a href="{{ route('projects.index') }}" class="btn btn-primary">Torna a Progetti</a>
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Elimina
             </button>
 

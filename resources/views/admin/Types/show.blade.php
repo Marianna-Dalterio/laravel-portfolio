@@ -8,7 +8,7 @@
 
         <div class="card">
             <div class="card-header bg-dark text-white">
-                <h2 class="mb-0">Dettaglio Tipologia: {{ $type->name }}</h2>
+                <h2 class="mb-0"> {{ $type->name }}</h2>
             </div>
 
             <div class="card-body">
