@@ -3,6 +3,7 @@
     <div class="container mt-4">
         <h1 class="title text-dark">{{ $project->project_name }}</h1>
         <p class="badge bg-info text-dark">{{ $project->type?->name ?? 'Nessuno' }}</p>
+        <!--chiamo $project->type ovvero il metodo, la funzione, che ho scritto nel model project così Eloquent legge la relazione tra le due tabelle !-->
         <p class="card-text">{{ $project->overview }}</p>
 
 

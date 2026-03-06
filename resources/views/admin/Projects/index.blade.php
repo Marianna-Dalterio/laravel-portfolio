@@ -3,7 +3,7 @@
     <div class="container mt-4">
         <h1>Tutti i tuoi progetti</h1>
         <div class="d-flex">
-            <a class="btn btn-outline-primary" href="{{ route('projects.create') }}">Aggiungi un progetto</a>
+            <a class="btn btn-primary" href="{{ route('projects.create') }}">Aggiungi un progetto</a>
 
         </div>
 
@@ -23,13 +23,12 @@
 
                         <div class="card-footer bg-transparent border-top-0">
                             <a href={{ route('projects.show', $project->id) }}
-                                class="btn btn-outline-primary btn-sm">Dettagli</a>
+                                class="btn btn-sm btn-info text-white">Dettagli</a>
                         </div>
 
 
                         <div class="card-footer bg-transparent border-top-0">
-                            <a href={{ route('projects.edit', $project) }}
-                                class="btn btn-outline-primary btn-sm">Modifica</a>
+                            <a href={{ route('projects.edit', $project) }} class="btn btn-sm btn-warning">Modifica</a>
                         </div>
 
                     </div>

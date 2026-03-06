@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('projects', function (Blueprint $table) {
 
             //uso la forma contratta di Laravel per creare la relazione tra projects e types tables
-            $table->foreignId("type_id")->nullable()->after("project_name")->constrained();
+            $table->foreignId("type_id")->nullable()->after("project_name")->constrained()->onDelete("set null");
         });
     }
 

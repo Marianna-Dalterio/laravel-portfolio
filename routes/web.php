@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Dashboard;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,8 +31,13 @@ Route::middleware(["auth", "verified"])
     });
 
 
-//rotte per operazioni CRUD con resource
+//rotte Projects per operazioni CRUD con resource
 Route::resource("projects", ProjectController::class)
     ->middleware(["auth", "verified"]);
+
+//rotte Types per operazioni CRUD con resource
+Route::resource("types", TypeController::class)
+    ->middleware(["auth", "verified"]);
+
 
 require __DIR__ . '/auth.php';
