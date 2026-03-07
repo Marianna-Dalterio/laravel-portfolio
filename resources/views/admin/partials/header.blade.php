@@ -12,10 +12,6 @@
                 </svg>
             </a>
 
-            <span class="navbar-text text-white h5 mb-0 mx-auto">
-                Back office
-            </span>
-
 
             <!--ms-auto margin start auto spinge il link a dx!-->
             <ul class="navbar-nav ms-auto">
