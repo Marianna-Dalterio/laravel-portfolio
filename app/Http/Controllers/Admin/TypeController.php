@@ -65,7 +65,12 @@ class TypeController extends Controller
      */
     public function update(Request $request, Type $type)
     {
-        //
+        $data = $request->all();
+
+        $type->name = $data["name"];
+        $type->update();
+
+        return redirect()->route("types.show", $type);
     }
 
     /**
