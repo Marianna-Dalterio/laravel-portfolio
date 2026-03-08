@@ -1,10 +1,34 @@
 @extends('admin.layouts.app')
 @section('content')
     <div class="container mt-4">
+
         <h1 class="title text-dark">{{ $project->project_name }}</h1>
-        <strong>Categoria: </strong>
-        <p class="badge bg-info text-dark">{{ $project->type?->name ?? 'Nessuno' }}</p>
-        <!--chiamo $project->type ovvero il metodo, la funzione, che ho scritto nel model project così Eloquent legge la relazione tra le due tabelle !-->
+
+        <div class="mb-4">
+            <strong>Categoria: </strong>
+
+            @if ($project->type)
+                <span class="badge rounded-pill bg-secondary">{{ $project->type->name }}</span>
+            @else
+                <span class="text-muted">Nessuna categoria</span>
+            @endif
+            <!--chiamo $project->type ovvero il metodo, la funzione, che ho scritto nel model project così Eloquent legge la relazione tra le due tabelle !-->
+
+
+            <div class="mt-2">
+                <strong>Linguaggi:</strong>
+                @if (count($project->technologies) > 0)
+                    @foreach ($project->technologies as $technology)
+                        <span class="badge" style="background-color: {{ $technology->color }}">{{ $technology->name }}</span>
+                    @endforeach
+                @endif
+            </div>
+
+
+        </div>
+
+
+        <!--riassunto!-->
         <p class="card-text">{{ $project->overview }}</p>
 
 

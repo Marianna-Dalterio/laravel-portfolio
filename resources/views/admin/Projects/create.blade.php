@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="type_id" class="form-label">Tipologia</label>
+                        <label for="type_id" class="form-label fw-bold">Tipologia</label>
                         <select class="form-select" name="type_id" id="type_id">
                             <option value="">Seleziona una tipologia</option>
                             @foreach ($types as $type)
@@ -37,6 +37,25 @@
                             @endforeach
                         </select>
                     </div>
+
+                    <div class=" mb-3">
+                        <strong>Seleziona uno o più Linguaggi:</strong>
+                        <div class="mt-2">
+                            @foreach ($technologies as $technology)
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="technologies[]"
+                                        id="tech-{{ $technology->id }}" value="{{ $technology->id }}">
+                                    <label class="form-check-label"
+                                        for="tech-{{ $technology->id }}">{{ $technology->name }}</label>
+                                </div>
+                            @endforeach
+                        </div>
+
+
+                    </div>
+
+
+
 
                     <div class="mb-3">
                         <label for="date" class="form-label fw-bold">Periodo</label>

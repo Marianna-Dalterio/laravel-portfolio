@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,10 @@ class ProjectController extends Controller
         //recupero tutti i tipi
         $types = Type::all();
 
-        return view("admin.Projects.create", compact("types"));
+        //recupero i linguaggi da technology
+        $technologies = Technology::all();
+
+        return view("admin.Projects.create", compact("types", "technologies"));
     }
 
     /**
@@ -37,6 +41,7 @@ class ProjectController extends Controller
     {
         //recupero i dati inviati alla store con il metodo all() per ottenere tutte le coppie name-value
         $data = $request->all();
+
 
         //creo nuova istanza del model Project
         $newProject = new Project();
@@ -51,6 +56,9 @@ class ProjectController extends Controller
         //salvo il nuovo dato nel db
         $newProject->save();
 
+        //salvo le selezioni di linguaggi-technologies
+        $newProject->technologies()->attach($data["technologies"]);
+
 
 
         //faccio un redirect alla rotta show per vedere il nuovo progetto salvato
@@ -62,6 +70,9 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
+
+        // Carica le relazioni in anticipo per evitare troppe query al DB
+        $project->load(['type', 'technologies']);
         return view("admin.Projects.show", compact("project"));
     }
 
