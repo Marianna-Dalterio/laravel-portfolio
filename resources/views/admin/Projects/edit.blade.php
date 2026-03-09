@@ -43,22 +43,39 @@
                     </div>
 
 
-                    <div class="mb-3">
-                        <label for="date" class="form-label fw-bold">Periodo</label>
-                        <input type="date" class="form-control" id="date" name="date"
-                            value="{{ $project->date }}">
-                    </div>
+                    <div class=" mb-3">
+                        <strong>Seleziona uno o più Linguaggi:</strong>
+                        <div class="mt-2">
+                            @foreach ($technologies as $technology)
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="technologies[]"
+                                        id="tech-{{ $technology->id }}" value="{{ $technology->id }}"
+                                        {{ $project->technologies->contains($technology->id) ? 'checked' : '' }}>
+                                    <label class="form-check-label"
+                                        for="tech-{{ $technology->id }}">{{ $technology->name }}</label>
+                                </div>
+                            @endforeach
+                        </div>
 
-                    <div class="mb-3">
-                        <label for="overview" class="form-label fw-bold">Riassunto</label>
-                        <textarea class="form-control" id="overview" name="overview" rows="3">{{ $project->overview }}</textarea>
-                    </div>
 
 
-                    <div class="d-flex justify-content-between">
-                        <button type="submit" class="btn btn-primary">Salva Modifiche</button>
-                        <a href="{{ route('projects.index') }}" class="btn btn-secondary">Annulla</a>
-                    </div>
+
+                        <div class="mb-3">
+                            <label for="date" class="form-label fw-bold">Periodo</label>
+                            <input type="date" class="form-control" id="date" name="date"
+                                value="{{ $project->date }}">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="overview" class="form-label fw-bold">Riassunto</label>
+                            <textarea class="form-control" id="overview" name="overview" rows="3">{{ $project->overview }}</textarea>
+                        </div>
+
+
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary">Salva Modifiche</button>
+                            <a href="{{ route('projects.index') }}" class="btn btn-secondary">Annulla</a>
+                        </div>
 
                 </form>
 

@@ -56,8 +56,11 @@ class ProjectController extends Controller
         //salvo il nuovo dato nel db
         $newProject->save();
 
-        //salvo le selezioni di linguaggi-technologies
-        $newProject->technologies()->attach($data["technologies"]);
+        //salvo le selezioni di linguaggi-technologies; controllo prima che ci siano delle selezioni e che non sia vuoto
+        if ($request->has('technologies')) {
+            $newProject->technologies()->attach($data["technologies"]);
+        }
+
 
 
 
@@ -82,8 +85,9 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
+        $technologies = Technology::all();
 
-        return view("admin.Projects.edit", compact("project", "types"));
+        return view("admin.Projects.edit", compact("project", "types", "technologies"));
     }
 
     /**
@@ -103,6 +107,14 @@ class ProjectController extends Controller
 
         //aggiorno il progetto
         $project->update();
+
+        //sincronizzo (sync) le modifiche della checkbox x selezione multipla; prima verifico se sto passando delle selezioni, altrimenti stacco (detach) tutte quelle collegate inizialmente
+        if ($request->has('technologies')) {
+            $project->technologies()->sync($data['technologies']);
+        } else {
+            $project->technologies()->detach();
+        }
+
 
 
         return redirect()->route("projects.show", $project);

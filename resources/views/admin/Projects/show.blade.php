@@ -16,8 +16,9 @@
 
 
             <div class="mt-2">
-                <strong>Linguaggi:</strong>
+
                 @if (count($project->technologies) > 0)
+                    <strong>Linguaggi:</strong>
                     @foreach ($project->technologies as $technology)
                         <span class="badge" style="background-color: {{ $technology->color }}">{{ $technology->name }}</span>
                     @endforeach
