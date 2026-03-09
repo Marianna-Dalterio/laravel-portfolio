@@ -28,6 +28,10 @@
                     <a class="nav-link" href="{{ route('types.index') }}">Categorie</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('technologies.index') }}">Linguaggi</a>
+                </li>
+
 
             </ul>
 
