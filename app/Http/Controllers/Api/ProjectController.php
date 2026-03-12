@@ -19,13 +19,21 @@ class ProjectController extends Controller
 
         $projects = Project::with(["type", "technologies"])->get();
 
-
-
         return response()->json(
             [
                 "success" => true,
                 "data" => $projects
             ]
         );
+    }
+
+
+    public function show(Project $project)
+    {
+        $project->load('type', 'technologies');
+        return response()->json([
+            "success" => true,
+            "data" => $project
+        ]);
     }
 }

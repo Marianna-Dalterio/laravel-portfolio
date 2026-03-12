@@ -10,4 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 
 //creo la prima rotta che fa riferimento al controller api
-Route::get("/projects", [ProjectController::class, "index"]);
+Route::get("projects", [ProjectController::class, "index"]);
+
+//rotta show per dettaglio del project
+Route::get("projects/{project}", [ProjectController::class, "show"]);
