@@ -1,5 +1,5 @@
 ## Laravel Portfolio
-Questo progetto rappresenta il lavoro finale del modulo di Back-end del Master Boolean. Si tratta di un sistema di gestione portfolio (CMS) che permette agli amministratori di gestire i propri progetti, categorie e tecnologie, esponendo i dati tramite API a un front-end esterno.
+Questo progetto rappresenta il lavoro finale del modulo di Specializzazione PHP del Master Boolean. Si tratta di un sistema di gestione portfolio (CMS) che permette agli amministratori di gestire i propri progetti, categorie e tecnologie, esponendo i dati tramite API a un front-end esterno.
 
 ## 📸 Panoramica
 Ecco come appare la dashboard amministrativa del portfolio. Da qui è possibile gestire l'intero archivio progetti e le relative tassonomie.
@@ -29,26 +29,31 @@ Una visuale della sezione Progetti, Categorie e Linguaggi.
 Il progetto è stato sviluppato in diverse fasi incrementali:
 
 1. Setup & Auth
+
 Inizializzazione del progetto con Laravel Breeze per la gestione dell'autenticazione. Configurazione del layout Admin basato su Bootstrap e verifica dei flussi di login/register.
 
 2. Gestione Progetti (Back-office)
+
 Implementazione dell'entità Project con:Migrazioni, Model e Seeder dedicati. 
 - ProjectController per la visualizzazione (Index, Show) e successivamente per tutte le operazioni CRUD.
 - Bonus UI: Implementazione di una modale Bootstrap per la conferma della cancellazione.
 
 3. Relazioni: Tipologie (One-to-Many)
+
 Introduzione dell'entità Type per categorizzare i progetti:
 - Relazione 1 ➡️ N tra Type e Project.
 - CRUD completo per i tipi di progetto.
 - Integrazione nei form di creazione/modifica dei progetti tramite menu a tendina.
 
 4. Relazioni: Tecnologie (Many-to-Many)
+
 Introduzione dell'entità Technology (es. PHP, JavaScript, Laravel):
 - Creazione della tabella pivot project_technology.
 - Relazione N ➡️ N gestita tramite checkbox nei form.
 - Visualizzazione delle tecnologie utilizzate in ogni singolo progetto.
 
 5. API ed Esposizione Dati
+
 Configurazione del backend come sorgente dati:
 - Creazione di Api/ProjectController per restituire dati in formato JSON.
 - Gestione dei filtri e delle relazioni caricate tramite with().
@@ -67,28 +72,33 @@ Per installare il progetto localmente:
 1. Clona la repository:
 
 Bash
+
 git clone [https://github.com/Marianna-Dalterio/laravel-portfolio.git]
 
 2. Installa le dipendenze PHP e JS:
 
 Bash
+
 composer install
 npm install
 
 3. Crea il file .env e genera la key:
 
 Bash
+
 cp .env.example .env
 php artisan key:generate
 
 4. Configura il database nel file .env e lancia le migrazioni con i seeder:
 
 Bash
+
 php artisan migrate --seed
 
 5. Avvia i server:
 
 Bash
+
 php artisan serve
 npm run dev
 
