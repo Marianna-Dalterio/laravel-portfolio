@@ -82,6 +82,7 @@ git clone [https://github.com/Marianna-Dalterio/laravel-portfolio.git]
 Bash
 
 composer install
+
 npm install
 
 3. Crea il file .env e genera la key:
@@ -89,6 +90,7 @@ npm install
 Bash
 
 cp .env.example .env
+
 php artisan key:generate
 
 4. Configura il database nel file .env e lancia le migrazioni con i seeder:
@@ -102,6 +104,7 @@ php artisan migrate --seed
 Bash
 
 php artisan serve
+
 npm run dev
 
 ## 🧠 Cosa ho imparato
