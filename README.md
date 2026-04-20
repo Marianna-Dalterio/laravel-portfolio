@@ -30,11 +30,13 @@ Il progetto è stato sviluppato in diverse fasi incrementali:
 
 1. Setup & Auth
 
-Inizializzazione del progetto con Laravel Breeze per la gestione dell'autenticazione. Configurazione del layout Admin basato su Bootstrap e verifica dei flussi di login/register.
+Inizializzazione del progetto con Laravel Breeze per la gestione dell'autenticazione. 
+Configurazione del layout Admin basato su Bootstrap e verifica dei flussi di login/register.
 
 2. Gestione Progetti (Back-office)
 
-Implementazione dell'entità Project con:Migrazioni, Model e Seeder dedicati. 
+Implementazione dell'entità Project con:
+- Migrazioni, Model e Seeder dedicati. 
 - ProjectController per la visualizzazione (Index, Show) e successivamente per tutte le operazioni CRUD.
 - Bonus UI: Implementazione di una modale Bootstrap per la conferma della cancellazione.
 
